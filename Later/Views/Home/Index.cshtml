@@ -1,5 +1,14 @@
 ﻿<div id="capsuleCreation">
-    <label>Message<textarea name="message" id="message" autofocus></textarea></label>
-    <input type="text" name="openingTime" id="openingTime" required />
-    <input type="submit" id="createButton" />
+    <span>Message</span>
+    <span>N'oubliez pas de le signer pour ne pas rester anonyme</span>
+    <textarea name="message" id="message" autofocus></textarea>
+    <span>Envoyer</span><a nohref id="fiveMinutesLink">Dans 5 minutes</a><a nohref id="tomorrowLink">Demain</a><a nohref id="nextWeekLink">La semaine prochaine</a>
+    <div id="datetimeCartouche">
+        <a id="dayDisplayer"></a>
+        <input type="text" name="openingDay" id="openingDay"/>
+        <a id="timeDisplayer"></a>
+        <span id="timezoneDisplayer"></span>
+    </div>
+    <input type="range" name="openingTime" id="openingTime" min="0" max="23" step="1"/>
+    <input type="submit" id="createButton" value="Deposer mon message" />
 </div>
