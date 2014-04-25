@@ -9,53 +9,46 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using Later.Models;
+using System.Web.Mvc;
 
 namespace Later.Controllers
 {
     public class CapsulesController : ApiController
     {
-        private LaterContext db = new LaterContext();
-
-        // GET api/Equipments
-		public IEnumerable<Capsule> GetEquipments()
-        {
-			return db.Capsules.AsEnumerable();
-        }
-
         // GET api/Equipments/5
-		public Capsule GetEquipment(int id)
+		public Capsule GetCapsule(int id)
         {
-			var equipment = db.Capsules.Find(id);
-            if (equipment == null)
-            {
-                throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
-            }
+			using (var db = new LaterContext())
+			{
+				var capsule = db.Capsules.Find(id);
+				if (capsule == null)
+				{
+					throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
+				}
 
-            return equipment;
+				return capsule;
+			}
         }
 
         // POST api/Equipments
-		public HttpResponseMessage PostEquipment(Capsule equipment)
-        {
-            if (ModelState.IsValid)
-            {
-				db.Capsules.Add(equipment);
-                db.SaveChanges();
+		public HttpResponseMessage PostCapsule(Capsule capsule)
+		{
+			if (ModelState.IsValid)
+			{
+				using (var db = new LaterContext())
+				{
+					db.Capsules.Add(capsule);
+					db.SaveChanges();
+				}
 
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, equipment);
-                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = equipment.ID }));
-                return response;
-            }
-            else
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
-            }
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
-        }
+				var response = Request.CreateResponse(HttpStatusCode.Created, capsule);
+				response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = capsule.ID, controller= "capsules" }));
+				return response;
+			}
+			else
+			{
+				return Request.CreateResponse(HttpStatusCode.BadRequest);
+			}
+		}
     }
 }

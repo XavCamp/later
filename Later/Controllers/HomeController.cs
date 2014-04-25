@@ -12,5 +12,10 @@ namespace Later.Controllers
 		{
 			return View();
 		}
+
+		public ActionResult Mail(string id)
+		{
+			return View();
+		}
 	}
 }

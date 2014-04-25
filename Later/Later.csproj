@@ -131,19 +131,26 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Static\css\Home.css" />
-    <Content Include="Static\jsplugins\backbone-min.js" />
-    <Content Include="Static\jsplugins\backbone-relational.js" />
-    <Content Include="Static\jsplugins\config.js" />
-    <Content Include="Static\jsplugins\jquery-1.9.1.min.js" />
-    <Content Include="Static\jsplugins\require.js" />
-    <Content Include="Static\jsplugins\text.js" />
-    <Content Include="Static\jsplugins\underscore-min.js" />
-    <Content Include="Static\jsplugins\use.min.js" />
-    <Content Include="Static\js\HeaderAnim.js" />
-    <Content Include="Static\js\HomeMain.js" />
-    <Content Include="Static\js\HomeModel.js" />
-    <Content Include="Static\js\HomeView.js" />
+    <Content Include="Static\css\jquery-ui-1.10.4.datepicker.min.css" />
+    <Content Include="Static\images\animated-overlay.gif" />
+    <Content Include="Static\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Static\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Static\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Static\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Static\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Static\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Static\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Static\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Static\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Static\images\ui-icons_222222_256x240.png" />
+    <Content Include="Static\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Static\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Static\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Static\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Static\scripts\jquery-2.1.0.min.js" />
+    <Content Include="Static\scripts\jquery-ui-1.10.4.datepicker.min.js" />
+    <Content Include="Static\scripts\script.js" />
+    <None Include="Views\Home\Mail.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -159,7 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Static\img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

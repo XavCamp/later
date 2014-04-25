@@ -16,8 +16,13 @@ namespace Later
 
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
-				routeTemplate: "api/{controller}/{id}",
-				defaults: new { id = RouteParameter.Optional }
+				routeTemplate: "api/{controller}/{id}"
+			);
+
+			config.Routes.MapHttpRoute(
+				name: "sendMail",
+				routeTemplate: "api/capsules/mail/{id}",
+				defaults: new { action = "mail", controller = "capsules" }
 			);
 		}
 	}
