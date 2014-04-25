@@ -36,9 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -132,18 +131,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Static\css\Home.css" />
-    <Content Include="Static\jsplugins\backbone-min.js" />
-    <Content Include="Static\jsplugins\backbone-relational.js" />
-    <Content Include="Static\jsplugins\config.js" />
-    <Content Include="Static\jsplugins\jquery-1.9.1.min.js" />
-    <Content Include="Static\jsplugins\require.js" />
-    <Content Include="Static\jsplugins\text.js" />
-    <Content Include="Static\jsplugins\underscore-min.js" />
-    <Content Include="Static\jsplugins\use.min.js" />
-    <Content Include="Static\js\HeaderAnim.js" />
-    <Content Include="Static\js\HomeMain.js" />
-    <Content Include="Static\js\HomeModel.js" />
-    <Content Include="Static\js\HomeView.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -160,6 +147,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Static\img\" />
+    <Folder Include="Static\jsplugins\" />
+    <Folder Include="Static\js\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -181,12 +170,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50010</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://later.local</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
